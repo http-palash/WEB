@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof operator in js</title>
+</head>
+<body>
+    <h1>
+        The typeof operator
+        The typeof(x) syntax
+    </h1>
+    <p>
+        The typeof operator returns the type of the operand. It’s useful when we want to process values of different types differently or just want to do a quick check.
+    </p>
+
+    <script>
+        typeof undefined // "undefined"
+
+        console.log(typeof (0)); // "number"
+
+        console.log(typeof (10n)); // "bigint"
+
+        console.log(typeof (true));   // "boolean"
+
+        console.log(typeof ("foo"));  // "string"
+
+        console.log(typeof Symbol("id")); // "symbol"
+
+        console.log(typeof (Math)); // "object"  (1)
+        // Math is a built-in object that provides mathematical operations.
+
+        console.log(typeof (null)); // "object"  (2)
+        // The result of typeof null is "object". That’s an officially recognized error in typeof, coming from very early days of JavaScript and kept for compatibility. Definitely, null is not an object. It is a special value with a separate type of its own. The behavior of typeof is wrong here.
+      
+        console.log(typeof (alert)); // "function"  (3)
+        // The result of typeof alert is "function", because alert is a function. 
+    </script>
+
+    <h1>
+        Summary
+    </h1>
+
+    <p>
+        There are 8 basic data types in JavaScript.
+
+        Seven primitive data types:
+        number for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+        bigint for integer numbers of arbitrary length.
+        string for strings. A string may have zero or more characters, there’s no separate single-character type.
+        boolean for true/false.
+        null for unknown values – a standalone type that has a single value null.
+        undefined for unassigned values – a standalone type that has a single value undefined.
+        symbol for unique identifiers.
+        And one non-primitive data type:
+        object for more complex data structures.
+        The typeof operator allows us to see which type is stored in a variable.
+
+        Usually used as typeof x, but typeof(x) is also possible.
+        Returns a string with the name of the type, like "string".
+        For null returns "object" – this is an error in the language, it’s not actually an object.
+    </p>
+</body>
+</html>

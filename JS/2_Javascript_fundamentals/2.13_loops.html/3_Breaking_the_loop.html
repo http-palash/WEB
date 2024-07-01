@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Breaking the loop</h1>
+            <p>Normally, a loop exits when its condition becomes falsy.
+
+                But we can force the exit at any time using the special break directive.</p>
+
+            <script>
+
+                let sum = 0;
+
+                while (true) {
+
+                    let value = +prompt("Enter a number", '');
+
+                    if (!value) break; // (*)
+
+                    sum += value;
+
+                }
+                alert('Sum: ' + sum);
+
+            </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        alert(null || 2 || undefined);//2
+        alert(alert(1) || 2 || alert(3));//2
+        alert(1 && null && 2); //null
+        alert(alert(1) && alert(2));//undefined
+        alert(null || 2 && 3 || 4);//3
+        // Write an if condition to check that age is between 14 and 90 inclusively.
+        if (age >= 14 && age <= 90) {
+            // “Inclusively” means that age can reach the edges 14 or 90.
+        }
+
+        // Write an if condition to check that age is NOT between 14 and 90 inclusively.
+        if (!(age >= 14 && age <= 90)) {
+
+        }
+    </script>
+
+
+    <script>
+        //     Which of these alerts are going to execute?
+
+        // What will the results of the expressions be inside if(...)?
+        if (-1 || 0) alert('first');
+        if (-1 && 0) alert('second');
+        if (null || -1 && 1) alert('third');
+        // Runs.
+        // The result of -1 || 0 = -1, truthy
+        if (-1 || 0) alert('first');
+
+        // Doesn't run
+        // -1 && 0 = 0, falsy
+        if (-1 && 0) alert('second');
+
+        // Executes
+        // Operator && has a higher precedence than ||
+        // so -1 && 1 executes first, giving us the chain:
+        // null || -1 && 1  ->  null || 1  ->  1
+        if (null || -1 && 1) alert('third');
+    </script>
+</body>
+</html>

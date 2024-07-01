@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use of var</title>
+</head>
+<body>
+    <!-- In older scripts, you may also find another keyword: var instead of let: -->
+    <!--The var keyword is almost the same as let. It also declares a variable but in a slightly different, “old-school” way.
+        There are subtle differences between let and var -->
+        <!-- Var
+        variables are function-scoped, which means they are accessible anywhere within the function in which they are declared.
+        Let
+        variables are block-scoped, which means they are only accessible within the block of code in which they are declared. -->
+        <!-- Another difference between var and let is that var variables can be re-declared within the same scope, while let variables cannot. For example, the following code will cause an error:
+        JavaScript
+         }
+        test(); -->
+        <script>
+            function test() {
+            var x = 1;
+            let y = 2;
+            var x = 3; // Error: x has already been declared
+            //   let y = 4; // Error: y has already been declared
+            }
+        </script>
+
+        <!-- Declaring let twice triggers an error -->
+        <script>
+            // let message = "This";
+            // // repeated 'let' leads to an error
+            // let message = "That"; // SyntaxError: 'message' has already been declared
+        </script>
+        <!-- We can also declare two variables and copy data from one into the other. -->
+
+        <script>
+            let hello = 'Hello world!';
+            let message;
+            // copy 'Hello world' from hello into message
+            message = hello;
+
+            // now two variables hold the same data
+            alert(hello); // Hello world!
+            alert(message); // Hello world!
+        </script>
+</body>
+</html>

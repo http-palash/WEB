@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>
+        Variable naming
+        There are two limitations on variable names in JavaScript:
+
+        The name must contain only letters, digits, or the symbols $ and _.
+        The first character must not be a digit.
+    </p>
+    <p>
+
+        Examples of valid names:
+        let userName;
+        let test123;
+        
+        let $ = 1; // declared a variable with the name "$"
+        let _ = 2; // and now a variable with the name "_"
+        
+        alert($ + _); // 3
+    </p>
+        
+    <p>
+
+        Examples of incorrect variable names:
+        
+        let 1a; // cannot start with a digit
+        
+        let my-name; // hyphens '-' aren't allowed in the name
+        
+        Non-Latin letters are allowed, but not recommended
+        It is possible to use any language, including Cyrillic letters, Chinese logograms and so on, like this:
+        
+        let имя = '...';
+        let 我 = '...';
+        
+        Reserved names
+        There is a list of reserved words, which cannot be used as variable names because they are used by the language itself.
+        
+        For example: let, class, return, and function are reserved.
+        
+        The code below gives a syntax error:
+        
+        let let = 5; // can't name a variable "let", error!
+        let return = 5; // also can't name it "return", error!
+    </p>
+        
+    <p>
+        An assignment without use strict
+        Normally, we need to define a variable before using it. But in the old times, it was technically possible to create a variable by a mere assignment of the value without using let. This still works now if we don’t put use strict in our scripts to maintain compatibility with old scripts.
+        <script>
+            // note: no "use strict" in this example
+            
+            /* "use strict" im this case 
+                Uncaught ReferenceError: num is not defined
+                at 3_variable_naming.html:60:17
+                num = 5; // the variable "num" is created if it didn't exist
+            */
+            alert(num); // 5
+            </script>
+    </p>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- We can have as many statements in our code as we want. Statements can be separated with a semicolon. -->
+    <!-- statements are written on separate lines to make the code more readable: -->
+    <script>
+        alert('Hello');
+        alert('World');
+    </script>
+
+    <!-- A semicolon may be omitted in most cases when a line break exists. -->
+    <!-- Both will work -->
+    <script>
+        alert('Hello1')
+        alert('World1')
+    </script>
+
+    <!-- Here, JavaScript interprets the line break as an “implicit” semicolon. This is called an automatic semicolon insertion. -->
+
+    <script>
+        alert(3 +
+        1
+        + 2);
+    </script>
+    <!-- The code outputs 6 because JavaScript does not insert semicolons here. It is intuitively obvious that if the line ends with a plus "+", then it is an “incomplete expression”, so a semicolon there would be incorrect. And in this case, that works as intended. -->
+
+    <!-- But there are situations where JavaScript “fails” to assume a semicolon where it is really needed. -->
+
+    <script>
+        alert("Hello")
+        // alert("Hello");
+        // next will not show 1 2 on removing semicolon
+        [1, 2].forEach(alert)
+    </script>
+
+    <!-- That’s because JavaScript does not assume a semicolon before square brackets [...]. So, the code in the last example is treated as a single statement. -->
+
+    <script>
+        // same as before
+        alert("Hello hi")[1, 2].forEach(alert);
+    </script>
+</body>
+</html>

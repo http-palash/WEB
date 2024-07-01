@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Increment/decrement</h1>
+    <p>Increasing or decreasing a number by one is among the most common numerical operations.</p>
+
+    <h4>Increment ++ increases a variable by 1:</h4>
+
+    <script>
+        let counter = 2;
+        counter++;        // works the same as counter = counter + 1, but is shorter
+        alert(counter); // 3
+    </script>
+
+    <h4>Decrement -- decreases a variable by 1:</h4>
+
+    <script>
+        counter = 2;
+        counter--;        // works the same as counter = counter - 1, but is shorter
+        alert(counter); // 1
+    </script>
+
+    <p>Important:
+        Increment/decrement can only be applied to variables. Trying to use it on a value like 5++ will give an error.
+    </p>
+
+    <p>
+        The operators ++ and -- can be placed either before or after a variable.
+
+        When the operator goes after the variable, it is in “postfix form”: counter++.
+        The “prefix form” is when the operator goes before the variable: ++counter.
+        Both of these statements do the same thing: increase counter by 1.
+
+        Is there any difference? Yes, but we can only see it if we use the returned value of ++/--.
+
+    </p>
+
+
+    <script>
+        // prefix form
+        counter = 1;
+        let a = ++counter; // (*)
+
+        alert(a); // 2
+
+        //  postfix form
+        counter = 1;
+        a = counter++; // (*) changed ++counter to counter++
+
+        alert(a); // 1
+    </script>
+
+    <p>
+        n the line (*), the postfix form counter++ also increments counter but returns the old value (prior to
+        increment). So, the alert shows 1.
+    </p>
+
+    <p>
+        If the result of increment/decrement is not used, there is no difference in which form to use:
+    </p>
+
+    <script>
+        counter = 0;
+        counter++;
+        ++counter;
+        alert(counter); // 2, the lines above did the same
+    </script>
+
+    <p>If we’d like to increase a value and immediately use the result of the operator, we need the prefix form:</p>
+
+    <script>
+        counter = 0;
+        alert(++counter); // 1
+    </script>
+
+    <p>If we’d like to increment a value but use its previous value, we need the postfix form:</p>
+
+    <script>
+        counter = 0;
+        alert(counter++); // 0
+    </script>
+
+
+    <h1>Increment/decrement among other operators</h1>
+
+    <p>The operators ++/-- can be used inside expressions as well. Their precedence is higher than most other
+        arithmetical operations.</p>
+
+    <script>
+        counter = 1;
+        alert(2 * ++counter); // 4
+        counter = 1;
+        alert(2 * counter++); // 2, because counter++ returns the "old" value
+    </script>
+
+    <p>
+        Though technically okay, such notation usually makes code less readable. One line does multiple things – not
+        good.
+
+        While reading code, a fast “vertical” eye-scan can easily miss something like counter++ and it won’t be obvious
+        that the variable increased.
+    </p>
+
+    
+
+
+</body>
+
+</html>

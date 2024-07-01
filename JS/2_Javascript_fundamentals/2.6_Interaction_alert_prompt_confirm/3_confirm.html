@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirm in js</title>
+</head>
+<body>
+    <h1>confirm</h1>
+    <p>
+        The syntax:
+        result = confirm(question);
+    </p>
+
+    <p>
+        The function confirm shows a modal window with a question and two buttons: OK and Cancel.
+        The result is true if OK is pressed and false otherwise.
+    </p>
+
+    <script>
+        let isBoss = confirm("Are you the boss?");
+        alert( isBoss ); // true if OK is pressed    
+        // false if cancel is pressed
+    </script>
+
+    <h1>
+        Summary
+    </h1>
+
+    <p>
+        We covered 3 browser-specific functions to interact with visitors:
+        <p>
+            alert
+        </p>
+        shows a message.
+        <p>
+            prompt
+        </p>
+        shows a message asking the user to input text. It returns the text or, if Cancel button or Esc is clicked, null.
+        <p>
+            confirm
+        </p>
+
+        shows a message and waits for the user to press “OK” or “Cancel”. It returns true for OK and false for Cancel/Esc.
+        All these methods are modal: they pause script execution and don’t allow the visitor to interact with the rest of the page until the window has been dismissed.
+
+        There are two limitations shared by all the methods above:
+
+        1. The exact location of the modal window is determined by the browser. Usually, it’s in the center.
+        2.The exact look of the window also depends on the browser. We can’t modify it.
+        That is the price for simplicity. There are other ways to show nicer windows and richer interaction with the visitor, but if “bells and whistles” do not matter much, these methods work just fine.
+    </p>
+</body>
+</html>

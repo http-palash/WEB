@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String datatype in js</title>
+</head>
+<body>
+    <h1>
+        A string in JavaScript must be surrounded by quotes.
+    </h1>
+
+    <p>
+        In JavaScript, there are 3 types of quotes.
+        Double quotes: "Hello".
+        Single quotes: 'Hello'.
+        Backticks: `Hello`.
+    </p>
+
+    <p>Double and single quotes are “simple” quotes. There’s practically no difference between them in JavaScript.</p>
+    <p>ackticks are “extended functionality” quotes. They allow us to embed variables and expressions into a string by wrapping them in ${…}, for example:</p>
+
+
+    <script>
+        let str = "Hello";
+        let str2 = 'Single quotes are ok too ${str}';
+        let phrase = `can embed another ${str}`;
+
+        console.log(str);
+        console.log(str2);
+        console.log(phrase);
+    </script>
+
+    <script>
+        let name = "Palash";
+        // let str = "error";
+        // embed a variable
+        alert( `Hello, ${name}!` ); // Hello, John!
+
+        // embed an expression
+        alert( `the result is ${1 + 2}` ); // the result is 3
+    </script>
+
+    <p>
+        There is no character type.
+        In some languages, there is a special “character” type for a single character. For example, in the C language and in Java it is called “char”.
+        In JavaScript, there is no such type. There’s only one type: string. A string may consist of zero characters (be empty), one character or many of them.
+    </p>
+
+
+</body>
+</html>

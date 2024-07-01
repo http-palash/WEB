@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Loops while and for</h1>
+    <p>
+        We often need to repeat actions.
+
+        For example, outputting goods from a list one after another or just running the same code for each number from 1
+        to 10.
+
+        Loops are a way to repeat the same code multiple times.
+    </p>
+
+
+    <h1>The for…of and for…in loops</h1>
+    <p>
+        See for…in to loop over object properties.
+        See for…of and iterables for looping over arrays and iterable objects.
+    </p>
+
+    <h1>The “while” loop</h1>
+    <script>
+        while (condition) {
+            // code
+            // so-called "loop body"
+        }
+    </script>
+    <p>While the condition is truthy, the code from the loop body is executed.</p>
+
+
+    <script>
+        let i = 0;
+        while (i < 3) { // shows 0, then 1, then 2
+            alert(i);
+            i++;
+        }
+    </script>
+
+    <p>
+        A single execution of the loop body is called an iteration. The loop in the example above makes three
+        iterations.
+
+        If i++ was missing from the example above, the loop would repeat (in theory) forever. In practice, the browser
+        provides ways to stop such loops, and in server-side JavaScript, we can kill the process.
+
+        Any expression or variable can be a loop condition, not just comparisons: the condition is evaluated and
+        converted to a boolean by while.
+    </p>
+
+    <p>
+        a shorter way to write while (i != 0) is while (i):
+    </p>
+
+
+    <script>
+        i = 3;
+        while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+            alert(i);
+            i--;
+        }
+    </script>
+
+    <h1>Curly braces are not required for a single-line body</h1>
+    <p>The condition check can be moved below the loop body using the do..while syntax:</p>
+    <script>
+        do {
+            // loop body
+        } while (condition);
+    </script>
+
+    <p>The loop will first execute the body, then check the condition, and, while it’s truthy, execute it again and
+        again.</p>
+    <script>
+        i = 0;
+        do {
+            alert(i);
+            i++;
+        } while (i < 3);
+    </script>
+
+    <h1>The “for” loop</h1>
+    <p>The for loop is more complex, but it’s also the most commonly used loop.</p>
+
+    <script>
+        for (begin; condition; step) {
+            // ... loop body ...
+        }
+        for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+            alert(i);
+        }
+    </script>
+
+    <p>
+
+        part
+        begin let i = 0 Executes once upon entering the loop.
+        condition i 3 Checked before every loop iteration. If false, the loop stops. body alert(i) Runs again and
+        again while the condition is truthy. step i++ Executes after the body on each iteration.
+    </p>
+
+
+    <p>
+        The general loop algorithm works like this:
+
+        Run begin
+        → (if condition → run body and run step)
+        → (if condition → run body and run step)
+        → (if condition → run body and run step)
+        → ...
+    </p>
+
+    <p>
+        // for (let i = 0; i < 3; i++) alert(i) // run begin let i=0 // if condition → run body and run step if (i < 3)
+            { alert(i); i++ } // if condition → run body and run step if (i < 3) { alert(i); i++ } // if condition → run
+            body and run step if (i < 3) { alert(i); i++ } // ...finish, because now i==3 </p>
+
+            <h1>Inline variable declaration</h1>
+            <p> the “counter” variable i is declared right in the loop. This is called an “inline” variable declaration.
+                Such variables are visible only inside the loop.</p>
+
+            <script>
+                for (let i = 0; i < 3; i++) {
+                    alert(i); // 0, 1, 2
+                }
+                alert(i); // error, no such variable
+            </script>
+            <p>Instead of defining a variable, we could use an existing one:</p>
+
+            <script>
+                //  let i = 0;
+                i = 0;
+
+                for (i = 0; i < 3; i++) { // use an existing variable
+                    alert(i); // 0, 1, 2
+                }
+
+                alert(i); // 3, visible, because declared outside of the loop
+            </script>
+
+
+          
+          
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt in js</title>
+</head>
+<body>
+    <h1>prompt</h1>
+    <p>The function prompt accepts two arguments:</p>
+
+    <p>
+        The visitor can type something in the prompt input field and press OK. 
+        Then we get that text in the result. 
+        Or they can cancel the input by pressing Cancel or hitting the Esc key, then we get null as the result.
+    </p>
+    <script>
+        // result = prompt(title, [default]);
+        result = prompt("what is your age",0);
+        console.log("Age is ",result);
+        alert("Age is "+result);
+        alert(`You are ${result} years old`);
+    </script>
+
+    <p>
+        In IE: always supply a default
+        The second parameter is optional, but if we don’t supply it, 
+        Internet Explorer will insert the text "undefined" into the prompt.
+    </p>
+
+    <script>
+        let test = prompt("Test");
+        // always provide the second argument:
+        test = prompt("Test", ''); // <-- for IE
+    </script>
+
+</body>
+</html>

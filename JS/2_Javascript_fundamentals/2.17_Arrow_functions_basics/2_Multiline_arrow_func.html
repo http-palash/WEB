@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Multiline arrow functions</h1>
+    <p>The arrow functions that we’ve seen so far were very simple. They took arguments from the left of =>, evaluated and returned the right-side expression with them.</p>
+    <p>Sometimes we need a more complex function, with multiple expressions and statements. In that case, we can enclose them in curly braces. The major difference is that curly braces require a return within them to return a value (just like a regular function does).</p>
+
+    <script>
+        let sum = (a, b) => {  // the curly brace opens a multiline function
+        let result = a + b;
+        return result; // if we use curly braces, then we need an explicit "return"
+        };
+
+        alert( sum(1, 2) ); // 3
+    </script>
+
+    <h1>Summary
+        Arrow functions are handy for simple actions, especially for one-liners. They come in two flavors:    
+    </h1>
+
+    <p>
+        Without curly braces: (...args) => expression – the right side is an expression: the function evaluates it and returns the result. Parentheses can be omitted, if there’s only a single argument, e.g. n => n*2.
+        With curly braces: (...args) => { body } – brackets allow us to write multiple statements inside the function, but we need an explicit return to return something.
+    </p>
+</body>
+</html>

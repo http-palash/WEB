@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Rewrite with arrow functions</h1>
+    <h3>Replace Function Expressions with arrow functions in the code below:</h3>
+    <p>
+        function ask(question, yes, no) {
+            if (confirm(question)) yes();
+            else no();
+          }
+          
+          ask(
+            "Do you agree?",
+            function() { alert("You agreed."); },
+            function() { alert("You canceled the execution."); }
+          );
+    </p>
+
+    <script>
+
+        // let ask = confirm("Do you agree")?
+        // () => alert("You agreed"):
+        // () => alert("You canceled the execution");
+
+        // ask();
+
+        function ask(question,yes,no){
+            if(confirm(question)) yes();
+            else no();
+        }
+
+        let ask = "Do you agree"?
+        () => alert("You agreed"):
+        () => alert("You canceled the execution");
+
+    </script>
+</body>
+</html>

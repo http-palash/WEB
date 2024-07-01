@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>
+        The nullish coalescing operator is written as two question marks ??.
+
+        As it treats null and undefined similarly, we’ll use a special term here
+
+    </p>
+
+    <p>
+        The result of a ?? b is:
+
+        if a is defined, then a,
+        if a isn’t defined, then b.
+    </p>
+
+    <p>
+        We can rewrite result = a ?? b using the operators that we already know, like this:
+    </p>
+    <script>
+        result = (a !== null && a !== undefined) ? a : b;
+        let user;
+
+        alert(user ?? "Anonymous"); // Anonymous (user is undefined)    
+        user = "John";
+
+        alert(user ?? "Anonymous"); // John (user is not null/undefined)
+    </script>
+
+    <p>
+        We’d like to display the user name using one of these variables, or show “Anonymous” if all of them are
+        null/undefined.
+    </p>
+
+    <script>
+        let firstName = null;
+        let lastName = null;
+        let nickName = "Supercoder";
+
+        // shows the first defined value:
+        alert(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+    </script>
+
+
+    <h1>Comparison with ||</h1>
+    <p>The OR || operator can be used in the same way as ??</p>
+    <script>
+        firstName = null;
+        lastName = null;
+        nickName = "Supercoder";
+
+        // shows the first truthy value:
+        alert(firstName || lastName || nickName || "Anonymous"); // Supercoder
+    </script>
+
+    <p>
+        || returns the first truthy value.
+        ?? returns the first defined value.
+    </p>
+
+    <script>
+        let height = 0;
+
+        alert(height || 100); // 100
+        alert(height ?? 100); // 0
+    </script>
+
+    <p>
+        The height || 100 checks height for being a falsy value, and it’s 0, falsy indeed.
+        so the result of || is the second argument, 100.
+        The height ?? 100 checks height for being null/undefined, and it’s not,
+        so the result is height “as is”, that is 0.
+    </p>
+
+    <h1>Precedence</h1>
+
+    <p>The precedence of the ?? operator is the same as ||. They both equal 3 in the MDN table.
+
+        That means that, just like ||, the nullish coalescing operator ?? is evaluated before = and ?, but after most
+        other operations, such as +, *.</p>
+
+    <script>
+        height = null;
+        let width = null;
+
+        // important: use parentheses
+        let area = (height ?? 100) * (width ?? 50);
+
+        alert(area); // 5000
+    </script>
+
+    <p> if we omit parentheses, then as * has the higher precedence than ??, it would execute first, leading to
+        incorrect results.</p>
+    <script>
+        // without parentheses
+        area = height ?? 100 * width ?? 50;
+        // ...works this way (not what we want):
+        area = height ?? (100 * width) ?? 50;
+    </script>
+
+    <h1>Using ?? with && or ||</h1>
+    <script>
+        // let x = 1 && 2 ?? 3; // Syntax error
+        let x = (1 && 2) ?? 3; // Works
+
+        alert(x); // 2
+    </script>
+
+    <h1>Summary</h1>
+    <p>The nullish coalescing operator ?? provides a short way to choose the first “defined” value from a list.
+
+        It’s used to assign default values to variables:</p>
+
+    <script>
+        // set height=100, if height is null or undefined
+        height = height ?? 100;
+    </script>
+
+</body>
+</html>

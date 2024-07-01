@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Rewrite the function using '?' or '||'</h1>
+    <script>
+        function checkAge(age) {
+            if (age > 18) {
+                return true;
+            } else {
+                return confirm('Did parents allow you?');
+            }
+        }
+    </script>
+
+    <script>
+        // Using ?
+        function checkAge(age) {
+        return (age > 18) ? true : confirm('Did parents allow you?');
+        }
+        // Using OR
+        function checkAge(age) {
+        return (age > 18) || confirm('Did parents allow you?');
+        }
+        // parentheses around age > 18 are not required here. They exist for better readability.
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>
+        What can we do to make welcome visible outside of if?
+    </p>
+    <p>
+        The correct approach would be to use a Function Expression and assign welcome to the variable that is declared outside of if and has the proper visibility.
+    </p>
+    <p>
+        This code works as intended:
+    </p>
+
+    <script>
+        let ag = prompt("enter age: ",'1');
+        let welcome;
+
+        if(ag < 18){
+            welcome = function(){
+                alert("Hello");
+            };
+        }else{
+            welcome = function(){
+                alert("Greetings");
+            };
+        }
+        welcome();
+    </script>
+
+    <p>Or we could simplify it even further using a question mark operator ?:</p>
+    <script>
+        let age = prompt("Enter you age:",'18');
+
+        let wel = age < 18 ?
+        function(){alert("Hello hi")}:
+        function(){alert("Greetinngs")};
+
+        wel();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>&& (AND)</h1>
+    <p>The AND operator is represented with two ampersands &&:</p>
+
+    <script>
+        alert(true && true);   // true
+        alert(false && true);  // false
+        alert(true && false);  // false
+        alert(false && false); // false
+    </script>
+
+    <script>
+        let hour = 12;
+        let minute = 30;
+
+        if (hour == 12 && minute == 30) {
+            alert('The time is 12:30');
+        }
+    </script>
+
+    <script>
+        if (1 && 0) { // evaluated as true && false
+            alert("won't work, because the result is falsy");
+        }
+    </script>
+
+    <h1>AND “&&” finds the first falsy value</h1>
+    <p>result = value1 && value2 && value3;</p>
+
+    <p>The AND && operator does the following:
+
+        Evaluates operands from left to right.
+        For each operand, converts it to a boolean. If the result is false, stops and returns the original value of that
+        operand.
+        If all operands have been evaluated (i.e. all were truthy), returns the last operand.
+        In other words, AND returns the first falsy value or the last value if none were found.</p>
+
+    <script>
+        // if the first operand is truthy,
+        // AND returns the second operand:
+        alert(1 && 0); // 0
+        alert(1 && 5); // 5
+
+        // if the first operand is falsy,
+        // AND returns it. The second operand is ignored
+        alert(null && 5); // null
+        alert(0 && "no matter what"); // 0
+    </script>
+
+    <script>
+        // We can also pass several values in a row. See how the first falsy one is returned:
+        alert( 1 && 2 && null && 3 ); // null
+        // When all values are truthy, the last value is returned:
+        alert( 1 && 2 && 3 ); // 3, the last one
+    </script>
+
+    <h1>Precedence of AND && is higher than OR ||</h1>
+    <p>So the code a && b || c && d is essentially the same as if the && expressions were in parentheses: (a && b) || (c && d).</p>
+    
+
+</body>
+</html>

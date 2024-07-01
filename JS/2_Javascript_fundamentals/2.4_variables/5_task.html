@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+</head>
+<body>
+    
+    <p>
+        Declare two variables: admin and name.
+        Assign the value "John" to name.
+        Copy the value from name to admin.
+        Show the value of admin using alert (must output “John”).
+    </p>
+
+    <script>
+        let admin,name;
+        name = "John";
+        admin = name;
+        alert("Admin is : "+admin);
+    </script>
+
+    <p>
+        Create a variable with the name of our planet. How would you name such a variable?
+        Create a variable to store the name of a current visitor to a website. How would you name that variable?
+    </p>
+
+    <script>
+        let ourPlanetName = "Earth";
+        let currentVisitor;
+        alert("Ourplanet name : "+ourPlanetName)
+    </script>
+
+    <p>
+        Uppercase const?
+        
+        Examine the following code:
+
+        const birthday = '18.04.1982';
+        const age = someCode(birthday);
+    </p>
+    <!-- We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code. -->
+    <script>
+        const BIRTHDAY = '2003-09-28'; // Corrected date format
+        let AGE; // Declare AGE variable
+    
+        function someCode(BIRTHDAY) {
+            // alert("hello");
+            // let today = new Date();
+            // let age = today.getFullYear() - BIRTHDAY.split('-').map(Number); // Convert birthday components to numbers
+            // AGE = age; // Assign the calculated age to AGE
+            // alert("Age is " + age);
+            // return age; // Return the age
+     
+        }
+    
+        // someCode(BIRTHDAY); // Call the function and pass the BIRTHDAY constant
+        // alert("AGE is :" + AGE); // Display the age using the AGE variable
+    </script>
+</body>
+</html>

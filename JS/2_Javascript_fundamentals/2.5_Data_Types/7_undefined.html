@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>undefined datatype in js</title>
+</head>
+<body>
+    
+    <h1>
+        The “undefined” value
+    </h1>
+    <p>
+        The special value undefined also stands apart. It makes a type of its own, just like null.
+
+        The meaning of undefined is “value is not assigned”.
+
+        If a variable is declared, but not assigned, then its value is undefined:
+    </p>
+
+    <script>
+        let age;
+        alert(age); // shows "undefined"
+        age = 100;
+        alert(age); // shows 100
+        // change the value to undefined
+        age = undefined;
+        alert(age); // "undefined"
+    </script>
+    
+    <p>
+        Normally, one uses null to assign an “empty” or “unknown” value to a variable, while undefined is reserved as a default initial value for unassigned things.
+    </p>
+</body>
+</html>

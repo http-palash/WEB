@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <h1>Labels for break/continue</h1>
+    <p>Sometimes we need to break out from multiple nested loops at once.</p>
+    <script>
+        for (let i = 0; i < 3; i++) {
+
+            for (let j = 0; j < 3; j++) {
+
+                let input = prompt(`Value at coords (${i},${j})`, '');
+
+                // what if we want to exit from here to Done (below)?
+            }
+        }
+
+        alert('Done!');
+    </script>
+
+    <p>
+        Syntax:
+
+        labelName: for (...) {
+        ...
+        }
+    </p>
+
+    <script>
+        outer: for (let i = 0; i < 3; i++) {
+
+            for (let j = 0; j < 3; j++) {
+
+                let input = prompt(`Value at coords (${i},${j})`, '');
+
+                // if an empty string or canceled, then break out of both loops
+                if (!input) break outer; // (*)
+
+                // do something with the value...
+            }
+        }
+
+        alert('Done!');
+    </script>
+
+    <p>
+        break label; // jump to the label below (doesn't work)
+
+        label: for (...)
+    </p>
+
+    <p>
+        label: {
+        // ...
+        break label; // works
+        // ...
+        }
+    </p>
+
+    <h1>Summary</h1>
+
+    <p>
+        We covered 3 types of loops:
+
+        while – The condition is checked before each iteration.
+        do..while – The condition is checked after each iteration.
+        for (;;) – The condition is checked before each iteration, additional settings available.
+    </p>
+
+
+</body>
+
+</html>

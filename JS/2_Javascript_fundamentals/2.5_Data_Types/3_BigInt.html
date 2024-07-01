@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BigInt js</title>
+</head>
+<body>
+    <h1>
+        BigInt
+        BigInt type was recently added to the language to represent integers of arbitrary length.
+        A BigInt value is created by appending n to the end of an integer:
+    </h1>
+    <p>
+        In JavaScript, the “number” type cannot safely represent integer values larger than (253-1) (that’s 9007199254740991), or less than -(253-1) for negatives.
+
+        To be really precise, the “number” type can store larger integers (up to 1.7976931348623157 * 10308), but outside of the safe integer range ±(253-1) there’ll be a precision error, because not all digits fit into the fixed 64-bit storage. So an “approximate” value may be stored.
+
+        For example, these two numbers (right above the safe range) are the same:
+        console.log(9007199254740991 + 1); // 9007199254740992
+        console.log(9007199254740991 + 2); // 9007199254740992
+    </p>
+    <script>
+         console.log(9007199254740991 + 1); // 9007199254740992
+         console.log(9007199254740991 + 2); // 9007199254740992
+         
+         const bigInt = 1234567890123456789012345678901234567890n;
+         //output = 1234567890123456789012345678901234567890n
+         console.log(bigInt);
+         console.log("BigInt numbers are rarely needed,");
+    </script>
+
+</body>
+</html>

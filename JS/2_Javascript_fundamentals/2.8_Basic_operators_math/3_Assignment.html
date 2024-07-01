@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment operators in html</title>
+</head>
+
+<body>
+
+    <h1>Assignment</h1>
+
+    <p>
+        Let’s note that an assignment = is also an operator. It is listed in the precedence table with the very low
+        priority of 2.
+
+        That’s why, when we assign a variable, like x = 2 * 2 + 1, the calculations are done first and then the = is
+        evaluated, storing the result in x.
+    </p>
+
+    <p>
+        Let’s note that an assignment = is also an operator. It is listed in the precedence table with the very low
+        priority of 2.
+
+        That’s why, when we assign a variable, like x = 2 * 2 + 1, the calculations are done first and then the = is
+        evaluated, storing the result in x.
+    </p>
+
+    <script>
+        let x = 2 * 2 + 1;
+
+        alert(x); // 5
+    </script>
+
+    <p>Assignment = returns a value</p>
+
+    <p>
+        The fact of = being an operator, not a “magical” language construct has an interesting implication.
+
+        All operators in JavaScript return a value. That’s obvious for + and -, but also true for =.
+
+        The call x = value writes the value into x and then returns it.
+
+        Demo that uses an assignment as part of a more complex expression:
+    </p>
+
+    <script>
+        let a = 1;
+        let b = 2;
+
+        let c = 3 - (a = b + 1);
+
+        alert(a); // 3
+        alert(c); // 0
+    </script>
+
+    <p>
+        the result of expression (a = b + 1) is the value which was assigned to a (that is 3). It is then used for
+        further evaluations.
+
+        Funny code, isn’t it? We should understand how it works, because sometimes we see it in JavaScript libraries.
+
+        Although, please don’t write the code like that. Such tricks definitely don’t make code clearer or readable.
+    </p>
+
+    <h1>Chaining assignments</h1>
+    <p>Another interesting feature is the ability to chain assignments:</p>
+
+    <script>
+        a, b, c;
+
+        a = b = c = 2 + 2;
+
+        alert(a); // 4
+        alert(b); // 4
+        alert(c); // 4
+    </script>
+
+
+    <p>
+        Chained assignments evaluate from right to left. First, the rightmost expression 2 + 2 is evaluated and then
+        assigned to the variables on the left: c, b and a. At the end, all the variables share a single value.
+
+        Once again, for the purposes of readability it’s better to split such code into few lines:
+    </p>
+
+    <script>
+        c = 2 + 2;
+        b = c;
+        a = c;
+    </script>
+
+    <p>
+        That’s easier to read, especially when eye-scanning the code fast.
+    </p>
+
+</body>
+
+</html>

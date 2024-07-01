@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Conditional operator ‘?’</h1>
+    <p>Sometimes, we need to assign a variable depending on a condition.</p>
+    <script>
+        let accessAllowed;
+        let age = prompt('How old are you?', '');
+
+        if (age > 18) {
+            accessAllowed = true;
+        } else {
+            accessAllowed = false;
+        }
+
+        alert(accessAllowed);
+    </script>
+
+    <p>
+        The so-called “conditional” or “question mark” operator lets us do that in a shorter and simpler way.
+
+        The operator is represented by a question mark ?. Sometimes it’s called “ternary”, because the operator has
+        three operands. It is actually the one and only operator in JavaScript which has that many.
+
+        The syntax is:
+        let result = condition ? value1 : value2;
+    </p>
+
+    <p>The condition is evaluated: if it’s truthy then value1 is returned, otherwise – value2.</p>
+
+    <script>
+        accessAllowed = (age > 18) ? true : false;
+    </script>
+
+    <p>
+        Technically, we can omit the parentheses around age > 18. The question mark operator has a low precedence, so it
+        executes after the comparison >.
+    </p>
+
+    <script>
+        accessAllowed = age > 18 ? true : false;
+    </script>
+
+    <p>But parentheses make the code more readable.</p>
+
+    <h1>Multiple ‘?’</h1>
+
+    <script>
+        age = prompt('age?', 18);
+
+        let message = (age < 3) ? 'Hi, baby!' :
+            (age < 18) ? 'Hello!' :
+                (age < 100) ? 'Greetings!' :
+                    'What an unusual age!';
+
+        alert(message);
+    </script>
+    <p>
+        It may be difficult at first to grasp what’s going on. But after a closer look, we can see that it’s just an
+        ordinary sequence of tests:
+
+        The first question mark checks whether age < 3. If true – it returns 'Hi, baby!' . Otherwise, it continues to
+            the expression after the colon “:”, checking age < 18. If that’s true – it returns 'Hello!' . Otherwise, it
+            continues to the expression after the next colon “:”, checking age < 100. If that’s true – it
+            returns 'Greetings!' . Otherwise, it continues to the expression after the last colon “:”,
+            returning 'What an unusual age!' . </p>
+
+            <p>how this looks using if..else </p>
+            <script>
+                if (age < 3) {
+                    message = 'Hi, baby!';
+                } else if (age < 18) {
+                    message = 'Hello!';
+                } else if (age < 100) {
+                    message = 'Greetings!';
+                } else {
+                    message = 'What an unusual age!';
+                }
+            </script>
+
+            <h1>Non-traditional use of ‘?’</h1>
+
+            <p>Sometimes the question mark ? is used as a replacement for if:</p>
+
+            <script>
+                let company = prompt('Which company created JavaScript?', '');
+
+                (company == 'Netscape') ?
+                    alert('Right!') : alert('Wrong.');
+            </script>
+
+            <p>
+                Depending on the condition company == 'Netscape', either the first or the second expression after the ?
+                gets executed and shows an alert.
+
+                We don’t assign a result to a variable here. Instead, we execute different code depending on the
+                condition.
+
+                It’s not recommended to use the question mark operator in this way.
+
+                The notation is shorter than the equivalent if statement, which appeals to some programmers. But it is
+                less readable.
+
+                Here is the same code using if for comparison:
+            </p>
+
+            <script>
+                company = prompt('Which company created JavaScript?', '');
+
+                if (company == 'Netscape') {
+                    alert('Right!');
+                } else {
+                    alert('Wrong.');
+                }
+            </script>
+
+
+            <script>
+                if ("0") {
+                    alert('Hello'); //true
+                }
+            </script>
+
+            
+
+</body>
+
+</html>

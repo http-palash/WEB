@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operators</title>
+</head>
+
+<body>
+    <h1>Basic operators, maths</h1>
+    <h2>We know many operators from school. They are things like addition +, multiplication *, subtraction -, and so on
+    </h2>
+
+    <h3>Terms: “unary”, “binary”, “operand”</h3>
+
+    <p>An operand – is what operators are applied to. For instance, in the multiplication of 5 * 2 there are two
+        operands: the left operand is 5 and the right operand is 2. Sometimes, people call these “arguments” instead of
+        “operands”.</p>
+    <p>An operator is unary if it has a single operand. For example, the unary negation - reverses the sign of a number:
+    </p>
+
+    <script>
+        let x = 1;
+        x = -x;
+        alert(x); // -1, unary negation was applied
+    </script>
+
+    <h3>
+        An operator is binary if it has two operands. The same minus exists in binary form as well:
+    </h3>
+
+    <script>
+        x = 1, y = 3;
+        alert(y - x); // 2, binary minus subtracts values
+    </script>
+
+    <h1>Maths</h1>
+    <p>
+        The following math operations are supported:
+
+        Addition +,
+        Subtraction -,
+        Multiplication *,
+        Division /,
+        Remainder %,
+        Exponentiation **.
+        The first four are straightforward, while % and ** need a few words about them.
+    </p>
+
+    <h1>Remainder %</h1>
+
+    <p>
+        The remainder operator %, despite its appearance, is not related to percents.
+
+        The result of a % b is the remainder of the integer division of a by b.
+    </p>
+
+    <script>
+        alert(5 % 2); // 1, the remainder of 5 divided by 2
+        alert(8 % 3); // 2, the remainder of 8 divided by 3
+        alert(8 % 4); // 0, the remainder of 8 divided by 4
+    </script>
+
+    <h1>Exponentiation **</h1>
+    <p>
+        The exponentiation operator a ** b raises a to the power of b.
+
+        In school maths, we write that as ab.
+    </p>
+
+    <script>
+        alert(2 ** 2); // 2² = 4
+        alert(2 ** 3); // 2³ = 8
+        alert(2 ** 4); // 2⁴ = 16
+    </script>
+
+    <p>
+        Just like in maths, the exponentiation operator is defined for non-integer numbers as well.
+
+        For example, a square root is an exponentiation by ½:
+    </p>
+
+    alert( 4 ** (1/2) ); // 2 (power of 1/2 is the same as a square root)
+    alert( 8 ** (1/3) ); // 2 (power of 1/3 is the same as a cubic root)
+
+    <h1>String concatenation with binary +</h1>
+    <p>Usually, the plus operator + sums numbers.
+
+        But, if the binary + is applied to strings, it merges (concatenates) them:</p>
+
+    <script>
+        let s = "my" + "string";
+        alert(s); // mystring
+    </script>
+
+    <p>
+        Note that if any of the operands is a string, then the other one is converted to a string too.
+        It doesn’t matter whether the first operand is a string or the second one.
+    </p>
+
+    <script>
+        alert('1' + 2); // "12"
+        alert(2 + '1'); // "21"
+    </script>
+
+    <p>more complex example:</p>
+
+    <script>
+        alert(2 + 2 + '1'); // "41" and not "221"
+    </script>
+
+    <p>operators work one after another. The first + sums two numbers, so it returns 4, then the next + adds the string
+        1 to it, so it’s like 4 + '1' = '41'.</p>
+    <script>
+        alert('1' + 2 + 2); // "122" and not "14"
+    </script>
+    <p>Here, the first operand is a string, the compiler treats the other two operands as strings too. The 2 gets
+        concatenated to '1', so it’s like '1' + 2 = "12" and "12" + 2 = "122".</p>
+
+    <p>The binary + is the only operator that supports strings in such a way. Other arithmetic operators work only with
+        numbers and always convert their operands to numbers.</p>
+
+    <script>
+        alert(6 - '2'); // 4, converts '2' to a number
+        alert('6' / '2'); // 3, converts both operands to numbers
+    </script>
+
+    <h1>Numeric conversion, unary +</h1>
+    <p>The plus + exists in two forms: the binary form that we used above and the unary form.
+
+        The unary plus or, in other words, the plus operator + applied to a single value, doesn’t do anything to
+        numbers. But if the operand is not a number, the unary plus converts it into a number.</p>
+
+    <script>
+        // No effect on numbers
+        x = 1;
+        alert(+x); // 1
+
+        let y = -2;
+        alert(+y); // -2
+
+        // Converts non-numbers
+        alert(+true); // 1
+        alert(+"");   // 0
+    </script>
+
+    <p>It actually does the same thing as Number(...), but is shorter.</p>
+
+    <p>The need to convert strings to numbers arises very often. For example, if we are getting values from HTML form
+        fields, they are usually strings. What if we want to sum them?</p>
+    <p>The binary plus would add them as strings:</p>
+
+    <script>
+        let apples = "2";
+        let oranges = "3";
+
+        alert(apples + oranges); // "23", the binary plus concatenates strings
+    </script>
+
+    <p>If we want to treat them as numbers, we need to convert and then sum them:</p>
+
+    <script>
+        apples = "2";
+        oranges = "3";
+
+        // both values converted to numbers before the binary plus
+        alert(+apples + +oranges); // 5
+
+        // the longer variant
+        // alert( Number(apples) + Number(oranges) ); // 5
+    </script>
+    <p>
+        From a mathematician’s standpoint, the abundance of pluses may seem strange. But from a programmer’s standpoint,
+        there’s nothing special: unary pluses are applied first, they convert strings to numbers, and then the binary
+        plus sums them up.
+
+        Why are unary pluses applied to values before the binary ones? As we’re going to see, that’s because of their
+        higher precedence.
+    </p>
+
+
+
+    
+</body>
+</html>

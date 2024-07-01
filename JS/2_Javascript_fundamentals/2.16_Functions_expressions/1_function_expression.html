@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Function expressions</h1>
+    <p>
+        In JavaScript, a function is not a “magical language structure”, but a special kind of value.
+
+The syntax that we used before is called a Function Declaration:        
+    </p>
+
+    <script>
+        // function sayHi() {
+        // alert( "sayHi Hello function" );
+        // }
+    </script>
+
+    <p>
+        There is another syntax for creating a function that is called a Function Expression.
+        It allows us to create a new function in the middle of any expression.
+    </p>
+
+    <script>
+        let sayHi = function() {
+         alert( "Hello hi value function" );
+        };
+    </script>
+    <p>
+
+        Here we can see a variable sayHi getting a value, the new function, created as function() { alert("Hello"); }.
+    </p>
+
+    <p>
+        As the function creation happens in the context of the assignment expression (to the right side of =), this is a Function Expression.
+    </p>
+
+    <p>
+        Please note, there’s no name after the function keyword. Omitting a name is allowed for Function Expressions.
+    </p>
+
+    <p>
+        Here we immediately assign it to the variable, so the meaning of these code samples is the same: "create a function and put it into the variable sayHi".
+    </p>
+
+    <p>
+        In more advanced situations, that we’ll come across later, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.
+    </p>
+
+        
+    <h1>Function is a value</h1>
+    <p>
+        no matter how the function is created, a function is a value. Both prev examples store a function in the sayHi variable.
+    </p>
+
+    <script>
+        // function sayHi() {
+        //      alert( "Hello" );
+        // }
+        sayHi(); 
+
+        // But
+
+        alert( sayHi ); // shows the function code
+        // function() {
+        //  alert( "Hello" );
+        // }; this will be output
+    </script>
+
+    <p>
+        Please note that the last line does not run the function, because there are no parentheses after sayHi. There are programming languages where any mention of a function name causes its execution, but JavaScript is not like that.
+    </p>
+
+    <p>
+        In JavaScript, a function is a value, so we can deal with it as a value. The code above shows its string representation, which is the source code.
+    </p>
+    
+    <p>
+        a function is a special value, in the sense that we can call it like sayHi().
+        But it’s still a value. So we can work with it like with other kinds of values.
+        We can copy a function to another variable:
+    </p>
+    <script>
+        let func = sayHi;
+        sayHi();
+        func();
+    </script>
+
+    <p>
+        Here’s what happens above in detail:
+
+        1.The Function Declaration (1) creates the function and puts it into the variable named sayHi.
+        2.Line (2) copies it into the variable func. Please note again: there are no parentheses after sayHi. If there were, then func = sayHi() would write the result of the call sayHi() into func, not the function sayHi itself.
+        3.Now the function can be called as both sayHi() and func().
+    </p>
+
+    <h1>Why is there a semicolon at the end?</h1>
+
+    <script>
+                function sayHi() {
+        // ...
+        }
+
+        let sayHi = function() {
+        // ...
+        };
+    </script>
+    <p>
+        The answer is simple: a Function Expression is created here as function(…) {…} inside the assignment statement: let sayHi = …;. The semicolon ; is recommended at the end of the statement, it’s not a part of the function syntax.
+        The semicolon would be there for a simpler assignment, such as let sayHi = 5;, and it’s also there for a function assignment.
+    </p>
+</body>
+</html>
+
+<!-- As the function creation happens in the context of the assignment expression (to the right side of =), this is a Function Expression. -->

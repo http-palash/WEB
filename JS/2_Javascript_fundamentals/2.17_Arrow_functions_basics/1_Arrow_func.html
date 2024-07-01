@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Arrow functions, the basics</h1>
+    <p>
+        There’s another very simple and concise syntax for creating functions, that’s often better than Function
+        Expressions.
+
+        It’s called “arrow functions”, because it looks like this:
+    </p>
+
+    <script>
+        // let func = (arg1, arg2, ..., argN) => expression;
+    </script>
+    <p>
+        This creates a function func that accepts arguments arg1..argN, then evaluates the expression on the right side
+        with their use and returns its result.
+
+        In other words, it’s the shorter version of:
+    </p>
+
+    <script>
+        let func = function (arg1, arg2, argN) {
+            return expression;
+        };
+    </script>
+
+    <p>For example:</p>
+
+    <script>
+        let sum = (a, b) => a + b;
+
+        /* This arrow function is a shorter form of:
+
+            let sum = function(a, b) {
+            return a + b;
+          };
+        */
+
+        alert( sum(1, 2) ); // 3
+
+    </script>
+
+    <h1>If we have only one argument, then parentheses around parameters can be omitted, making that even shorter.</h1>
+
+    <script>
+        let double = n => n * 2;
+        // roughly the same as: let double = function(n) { return n * 2 }
+        alert( double(3) ); // 6
+    </script>
+
+    <h1>
+        If there are no arguments, parentheses are empty, but they must be present:
+    </h1>
+
+    <script>
+        let sayHi = () => alert("Hello!");
+        sayHi();
+    </script>
+
+    <script>
+        //       <script>
+        //     let age = prompt("Enter you age:",'18');
+
+        //     let wel = age < 18 ?
+        //     function(){alert("Hello hi")}:
+        //     function(){alert("Greetinngs")};
+
+        //     wel();
+            //
+        let age = prompt("Enter age : ",'18');  
+
+        let welcome = (age>18)?
+            ()=> alert('Hello'):
+            ()=> alert('Greetings');
+            welcome();
+    </script>
+
+
+</body>
+
+</html>

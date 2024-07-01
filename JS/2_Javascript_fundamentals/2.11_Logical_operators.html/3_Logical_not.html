@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>!(NOT)</h1>
+
+    <script>
+        result = !value;
+        alert(!true); // false
+        alert(!0); // true
+
+        // A double NOT !! is sometimes used for converting a value to boolean type:
+        alert(!!"non-empty string"); // true
+        alert(!!null); // false
+
+        // There’s a little more verbose way to do the same thing – a built-in Boolean function:
+
+        alert(Boolean("non-empty string")); // true
+        alert(Boolean(null)); // false
+    </script>
+
+
+</body>
+
+</html>

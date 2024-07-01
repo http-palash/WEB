@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Conditional branching: if, '?'</h1>
+    <p>Sometimes, we need to perform different actions based on different conditions.
+
+        To do that, we can use the if statement and the conditional operator ?, that’s also called a “question mark”
+        operator.</p>
+
+    <h3>The “if” statement</h3>
+    <p>The if(...) statement evaluates a condition in parentheses and, if the result is true, executes a block of code.
+    </p>
+    <script>
+        let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+        if (year == 2015) alert('You are right!');
+    </script>
+
+    <p>If we want to execute more than one statement, we have to wrap our code block inside curly braces:</p>
+
+    <script>
+        if (year == 2015) {
+            alert("That's correct!");
+            alert("You're so smart!");
+        }
+    </script>
+
+    <p>
+        wrapping your code block with curly braces {} every time you use an if statement, even if there is only one
+        statement to execute. Doing so improves readability.
+    </p>
+
+    <h1>Boolean conversion</h1>
+
+
+    <p>
+        The if (…) statement evaluates the expression in its parentheses and converts the result to a boolean.
+
+        Let’s recall the conversion rules from the chapter Type Conversions:
+
+        A number 0, an empty string "", null, undefined, and NaN all become false. Because of that they are called
+        “falsy” values.
+        Other values become true, so they are called “truthy”.
+        So, the code under this condition would never execute:
+    </p>
+
+    <script>
+        if (0) { // 0 is falsy
+  
+        }
+        if (1) { // 1 is truthy
+  
+        }
+
+        let cond = (year == 2015); // equality evaluates to true or false
+
+        if (cond) {
+
+        }
+    </script>
+</body>
+</html>
