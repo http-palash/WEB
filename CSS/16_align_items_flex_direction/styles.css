@@ -1,0 +1,39 @@
+.container {
+    border: 8px solid #016a26;
+    height: 360px;
+    /*
+    justify-content:
+    start, center, end, space-around, 
+    space-evenly, space-between
+    
+    align-items:
+    start, center, end
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.item {
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    padding: 10px;
+    font-size: 50px;
+    border: 2px solid black;
+    background: linear-gradient(#14463d, #016a26);
+}
+
+
+/* flex direction columns flips the axis inside container
+
+    flex dir roe
+    justify content(horizonal main axis)
+    align items(cross vertial axis)
+
+    flex dir col 
+    align items(horizonal main axis)
+    justify content(cross vertial axis)
+ 
+*/

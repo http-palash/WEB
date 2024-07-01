@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.main{
+    display: flex;
+    /* background-color: aqua; */
+}
+
+#left-section{
+    padding: 50px;
+}
+
+#right-section{
+    padding: 40px 10px;
+}
+
+.title {
+    font-weight: lighter;
+}
+
+.main-img {
+    box-shadow: 0px 2px 5px lightgray;
+    max-width: 320px;
+    /* margin-top: 30px; */
+}
+
+.nav{
+    color: #565959;
+}
+
+#author-name{
+    color: blue;
+}
+
+#headline{
+    font-weight: bold;
+}

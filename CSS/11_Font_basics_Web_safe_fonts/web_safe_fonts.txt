@@ -1,0 +1,14 @@
+Arial (sans-serif)
+Verdana (sans-serif)
+Tahoma (sans-serif)
+Trebuchet MS (sans-serif)
+Times New Roman (serif)
+Georgia (serif)
+Garamond (serif)
+Courier New (monospace)
+Brush Script MT (cursive)
+
+
+serif fonts has decorative ending at ending
+meanwhile sans-serif fonts wont have decorative
+endings at end 

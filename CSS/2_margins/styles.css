@@ -1,0 +1,41 @@
+body{
+    margin: 0px;
+}
+
+/* .red {
+    background: #c71226;
+    height: 100px;
+}
+
+.blue {
+    background: #0d1b88;
+    height: 100px;
+}
+
+.green {
+    background: #397327;
+    height: 100px;
+} */
+body {
+    margin:0;
+}
+
+.red {
+    background: #c71226;
+    height: 100px;
+    /* margin-bottom: 30px; takes preference to bellow class (margins will collapsed )*/ 
+}
+
+/*Creating the flag of The Gambia by pplying styles to the blue box! */
+.blue {
+    background: #0d1b88;
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.green {
+    background: #397327;
+    height: 100px;
+}
+

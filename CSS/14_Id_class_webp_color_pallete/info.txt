@@ -1,0 +1,14 @@
+id vs class selectors
+
+use #id when you know your element is unique and only used once
+
+used class to reuse properties in multiple elements class is something we can use repeatedly
+
+For interactive UI try using .webp files as background images 
+
+get .webp files from giphy.com
+or copy paste giphy link in url
+
+
+pick colors from images
+https://coolors.co/image-picker
